@@ -1,0 +1,34 @@
+<md-sidenav-container fullscreen>
+  <md-sidenav #sidenav mode="push" class="app-sidenav">
+    <md-toolbar color="primary" >
+      <!--future svg to go here-->
+      <span class="toolbar-filler"></span>
+      <button md-icon-button (click)="sidenav.toggle()" class="md-icon-button sidenav-toggle-button" [hidden]="!sidenav.opened">
+        <md-icon aria-label="Menu" class="material-icons">close</md-icon>
+      </button>
+    </md-toolbar>
+    <md-nav-list>
+      <a md-list-item class="sidenav-link" [routerLink]="['/comp1']" (click)="sidenav.toggle()">
+        <md-icon md-list-icon>account_balance</md-icon>
+        <span class="title" md-line>comp1</span>
+        <span md-line class="secondary">test</span>
+      </a>
+      <a md-list-item class="sidenav-link" [routerLink]="['/comp2']" (click)="sidenav.toggle()">
+        <md-icon md-list-icon>android</md-icon>
+        <span class="title" md-line>comp2</span>
+        <span md-line class="secondary">test</span>
+      </a>
+    </md-nav-list>
+  </md-sidenav>
+  <md-toolbar id="appToolbar" [ngClass]="{'toolbar-fullscreen': (fullscreen$ | async)}" color="primary">
+    <button md-icon-button (click)="sidenav.toggle()" class="md-icon-button sidenav-toggle-button" [hidden]="sidenav.opened">
+      <md-icon aria-label="Menu" class="material-icons">menu</md-icon>
+    </button>
+    <h1 class="component-title">
+      <a class="title-link">{{title}}</a>
+    </h1>
+    <span class="toolbar-filler"></span>   
+    <button id="button-logout" md-button>Log Out</button>
+  </md-toolbar>
+  <router-outlet></router-outlet>
+</md-sidenav-container>
