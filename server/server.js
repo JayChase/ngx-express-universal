@@ -7,7 +7,8 @@ const path = require('path');
 const app = express();
 const port = process.env.port || 3000;
 app.use('*', function (req, res, next) {
-    renderModuleFactory(AppServerModuleNgFactory, { document: index, url: '/' }).then(html => {
+    renderModuleFactory(AppServerModuleNgFactory, { document: index, url: req.baseUrl }).then(html => {
+        // req.baseUrl
         res.send(html);
     });
 });
