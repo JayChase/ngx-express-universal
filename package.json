@@ -6,6 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-server": "tsc -p ./server-src/tsconfig.json",
+    "server": "node server/server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -23,7 +25,9 @@
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
+    "@types/express": "^4.0.36",
     "core-js": "^2.4.1",
+    "express": "^4.15.4",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },
@@ -34,7 +38,7 @@
     "@angular/platform-server": "^4.3.4",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
-    "@types/node": "~6.0.60",
+    "@types/node": "^6.0.85",
     "codelyzer": "~3.1.1",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",

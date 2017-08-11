@@ -12,5 +12,25 @@ add src/main.server.ts
 
 add src/app.server.module.ts
 
+change src/app.module.ts
+
+BrowserModule.withServerTransition({
+      appId: 'cli-uni'
+    })
+
 add server app to .angular-cli.json
 
+.gitignore exclude dist-server 
+
+npm install express --save
+
+add server/server.js
+
+## Add express server
+
+npm install --save express
+npm install @types/node @types/express --save
+
+server-src/tscfonig
+
+package.json add script "build-server": "tsc -p ./server-src/tsconfig.json",

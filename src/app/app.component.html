@@ -20,7 +20,7 @@
       </a>
     </md-nav-list>
   </md-sidenav>
-  <md-toolbar id="appToolbar" [ngClass]="{'toolbar-fullscreen': (fullscreen$ | async)}" color="primary">
+  <md-toolbar id="appToolbar" color="primary">
     <button md-icon-button (click)="sidenav.toggle()" class="md-icon-button sidenav-toggle-button" [hidden]="sidenav.opened">
       <md-icon aria-label="Menu" class="material-icons">menu</md-icon>
     </button>
