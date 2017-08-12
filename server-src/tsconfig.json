@@ -4,6 +4,11 @@
     "module": "commonjs",
     "outDir": "../server"
   },
+  "sourceMap": false,
+  "strict": true   ,
+  "typeRoots": [
+    "../node_modules/@types"
+  ],
   "include": [
     "**/*.ts"
   ],

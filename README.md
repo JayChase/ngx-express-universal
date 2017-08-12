@@ -34,3 +34,17 @@ npm install @types/node @types/express --save
 server-src/tscfonig
 
 package.json add script "build-server": "tsc -p ./server-src/tsconfig.json",
+
+##fix missing css buncle
+
+ npm i glob @types/glob --save-dev
+
+build/addStyleBundle.js
+
+package.json add script  "build-uni-add-css": "node build/addStyleBundle",
+
+add <!--css-bundle--> to src/index.html
+
+change server/server.ts to use dist-server/index.html
+
+
