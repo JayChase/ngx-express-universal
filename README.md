@@ -47,7 +47,7 @@ To get the Material styles working on the server side add the style bundle to th
 * add build-uni-add-css to package.json
 
 ```json
-"build-uni-add-css": "node build/addStyleBundle",
+"build-uni-add-css": "node build/addStyleBundle"
 ```
 
 * add <!--css-bundle--> to src/index.html
@@ -73,7 +73,7 @@ const index = require('fs').readFileSync('./dist-server/index.html', 'utf8');
 and for server client transition
 
 ```typescript
-const index = require('fs').readFileSync('./dist/index.html', 'utf8');S
+const index = require('fs').readFileSync('./dist/index.html', 'utf8');
 ```
 
 
