@@ -1,50 +1,59 @@
 # NgxExpressUniversal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
+Angular Cli (1.30) + Angular Material 2 + Angular Universal.
 
-## Steps so far to add universal
+This is a very rough guide of how to get up and running with all of the above. The starting point is an Angulat-cli generated app with Material added. The aim of this repo is to be a guide to the minimum syep required to get everything up and running. So productio concerns like error handling, caching and performance etc.. are not covered (but hopefully will be in a separetd repo with all the best practices at a later date).
 
-npm install @angular/platform-server --save-dev
+### quick links
+To get started with [Angular cli](https://github.com/angular/angular-cli),
+To install [Angular Material2](https://github.com/angular/material2/blob/master/guides/getting-started.md)
+To install [Angular Universal](https://github.com/angular/angular-cli/wiki/stories-universal-rendering)
 
-add src/tsconfig.server.json
+## Steps to add universal
 
-add src/main.server.ts
+These steps are just a checklist for the [Angular cli story](https://github.com/angular/angular-cli) so use that for more details.
 
-add src/app.server.module.ts
+####intall platform server
 
-change src/app.module.ts
+* install @angular/platform-server (--save-dev)
+* add src/tsconfig.server.json
+* add src/main.server.ts
+* add src/app.server.module.ts
+* change src/app.module.ts
 
+```typescript
 BrowserModule.withServerTransition({
       appId: 'cli-uni'
-    })
+    });
+```
 
-add server app to .angular-cli.json
-
-.gitignore exclude dist-server 
-
-npm install express --save
-
-add server/server.js
+* add server app to .angular-cli.json
+* exclude dist-server in .gitignore 
 
 ## Add express server
 
-npm install --save express
-npm install @types/node @types/express --save
+* npm install --save express
+* npm install @types/node @types/express --save
+* add server-src/tscfonig.json
+* add build-server script to package.json
 
-server-src/tscfonig
-
-package.json add script "build-server": "tsc -p ./server-src/tsconfig.json",
+```json
+"build-server": "tsc -p ./server-src/tsconfig.json"
+```
 
 ##fix missing css buncle
 
- npm i glob @types/glob --save-dev
+To get the Material styles working on the server side add the style bundle to the server index.html.
 
-build/addStyleBundle.js
+* install glob and @types/blog (--save-dev)
+* add build/addStyleBundle.js
+* add build-uni-add-css to package.json
 
-package.json add script  "build-uni-add-css": "node build/addStyleBundle",
+```json
+"build-uni-add-css": "node build/addStyleBundle",
+```
 
-add <!--css-bundle--> to src/index.html
-
-change server/server.ts to use dist-server/index.html
+* add <!--css-bundle--> to src/index.html
+* change server/server.ts to use dist-server/index.html
 
 
