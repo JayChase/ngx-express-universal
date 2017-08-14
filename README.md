@@ -41,7 +41,7 @@ BrowserModule.withServerTransition({
 "build-server": "tsc -p ./server-src/tsconfig.json"
 ```
 
-##fix missing css buncle
+##fix missing css bundle (for server side rendering)
 
 To get the Material styles working on the server side add the style bundle to the server index.html.
 
@@ -64,4 +64,19 @@ To get the Material styles working on the server side add the style bundle to th
 ```json
 "build-set-server-main-bundle": "node build/setServerMainBundle"
 ```
+
+## chosing between server seide render or server to client transition
+
+For server side the index in server.ts should be:
+
+```typescript
+const index = require('fs').readFileSync('./dist-server/index.html', 'utf8');
+```
+
+and for server client transition
+
+```typescript
+const index = require('fs').readFileSync('./dist/index.html', 'utf8');S
+```
+
 
