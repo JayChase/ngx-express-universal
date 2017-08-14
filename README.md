@@ -2,18 +2,16 @@
 
 Angular Cli (1.30) + Angular Material 2 + Angular Universal.
 
-This is a very rough guide of how to get up and running with all of the above. The starting point is an Angulat-cli generated app with Material added. The aim of this repo is to be a guide to the minimum syep required to get everything up and running. So productio concerns like error handling, caching and performance etc.. are not covered (but hopefully will be in a separetd repo with all the best practices at a later date).
+This is a rough guide of how to get up and running with all of the above. The starting point is an Angular-cli generated app with Material 2 added. The aim of this repo is to be a guide to the minimum steps required to get everything up and running so production concerns like error handling, caching and performance etc... are not covered (but hopefully will be in a separate repo with all the best practices later).
 
 ### quick links
-To get started with [Angular cli](https://github.com/angular/angular-cli),
+To get started with [Angular cli](https://github.com/angular/angular-cli)
 To install [Angular Material2](https://github.com/angular/material2/blob/master/guides/getting-started.md)
 To install [Angular Universal](https://github.com/angular/angular-cli/wiki/stories-universal-rendering)
 
-## Steps to add universal
+## steps to add universal
 
-These steps are just a checklist for the [Angular cli story](https://github.com/angular/angular-cli) so use that for more details.
-
-####intall platform server
+These steps are just a checklist for the [Angular cli story](https://github.com/angular/angular-cli) so use that for full details.
 
 * install @angular/platform-server (--save-dev)
 * add src/tsconfig.server.json
@@ -30,10 +28,9 @@ BrowserModule.withServerTransition({
 * add server app to .angular-cli.json
 * exclude dist-server in .gitignore 
 
-## Add express server
+## add express server
 
-* npm install --save express
-* npm install @types/node @types/express --save
+* install express @types/node @types/express (--save)
 * add server-src/tscfonig.json
 * add build-server script to package.json
 
@@ -41,7 +38,7 @@ BrowserModule.withServerTransition({
 "build-server": "tsc -p ./server-src/tsconfig.json"
 ```
 
-##fix missing css bundle (for server side rendering)
+## fix missing css bundle (for server side rendering)
 
 To get the Material styles working on the server side add the style bundle to the server index.html.
 
