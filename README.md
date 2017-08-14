@@ -56,4 +56,12 @@ To get the Material styles working on the server side add the style bundle to th
 * add <!--css-bundle--> to src/index.html
 * change server/server.ts to use dist-server/index.html
 
+## update server.ts js bundle name on build
+
+* add build/setServerMainBundle.js
+* add build-set-server-main-bundle
+
+```json
+"build-set-server-main-bundle": "node build/setServerMainBundle"
+```
 

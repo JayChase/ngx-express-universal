@@ -17,7 +17,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule.withServerTransition({
-      appId: 'cli-uni'
+      appId: 'app-root'
     }),
     BrowserAnimationsModule,
     MdSidenavModule,
