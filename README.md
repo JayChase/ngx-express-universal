@@ -62,7 +62,7 @@ To get the Material styles working on the server side add the style bundle to th
 "build-set-server-main-bundle": "node build/setServerMainBundle"
 ```
 
-## chosing between server seide render or server to client transition
+## chosing between server side render or server to client transition
 
 For server side the index in server.ts should be:
 
