@@ -21,7 +21,7 @@ npm run server
 
 ## steps to create the project
 
-### steps to add universal
+### add universal
 
 These steps are just a checklist for the [Angular cli story](https://github.com/angular/angular-cli) so use that for full details.
 
