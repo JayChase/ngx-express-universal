@@ -5,11 +5,23 @@ Angular Cli (1.30) + Angular Material 2 + Angular Universal.
 This is a rough guide of how to get up and running with all of the above. The starting point is an Angular-cli generated app with Material 2 added. The aim of this repo is to be a guide to the minimum steps required to get everything up and running so production concerns like error handling, caching and performance etc... are not covered (but hopefully will be in a separate repo with all the best practices later).
 
 ### quick links
-To get started with [Angular cli](https://github.com/angular/angular-cli)
-To install [Angular Material2](https://github.com/angular/material2/blob/master/guides/getting-started.md)
-To install [Angular Universal](https://github.com/angular/angular-cli/wiki/stories-universal-rendering)
+To get started with [Angular cli](https://github.com/angular/angular-cli),
+to install [Angular Material2](https://github.com/angular/material2/blob/master/guides/getting-started.md),
+and to install [Angular Universal](https://github.com/angular/angular-cli/wiki/stories-universal-rendering).
 
-## steps to add universal
+## getting started with the sample
+
+```bash
+git clone https://github.com/JayChase/ngx-express-universal.git
+cd ngx-express-universal
+npm install
+npm run build-all
+npm run server
+```
+
+## steps to create the project
+
+### steps to add universal
 
 These steps are just a checklist for the [Angular cli story](https://github.com/angular/angular-cli) so use that for full details.
 
@@ -28,7 +40,7 @@ BrowserModule.withServerTransition({
 * add server app to .angular-cli.json
 * exclude dist-server in .gitignore 
 
-## add express server
+### add express server
 
 * install express @types/node @types/express (--save)
 * add server-src/tscfonig.json
@@ -38,7 +50,7 @@ BrowserModule.withServerTransition({
 "build-server": "tsc -p ./server-src/tsconfig.json"
 ```
 
-## fix missing css bundle (for server side rendering)
+### fix missing css bundle (for server side rendering)
 
 To get the Material styles working on the server side add the style bundle to the server index.html.
 
@@ -53,7 +65,7 @@ To get the Material styles working on the server side add the style bundle to th
 * add <!--css-bundle--> to src/index.html
 * change server/server.ts to use dist-server/index.html
 
-## update server.ts js bundle name on build
+### update server.ts js bundle name on build
 
 * add build/setServerMainBundle.js
 * add build-set-server-main-bundle
@@ -62,7 +74,7 @@ To get the Material styles working on the server side add the style bundle to th
 "build-set-server-main-bundle": "node build/setServerMainBundle"
 ```
 
-## chosing between server side render or server to client transition
+### chosing between server side render or server to client transition
 
 For server side the index in server.ts should be:
 
