@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, '../dist'),{
 }));
 app.use('*', function (req, res, next) {
     // res.sendFile(path.join(__dirname,'../dist/index.html'));
-    renderModuleFactory(AppServerModuleNgFactory, { document: index, url: req.baseUrl }).then(html => {
+    renderModuleFactory(AppServerModuleNgFactory, { document: index, url: req.originalUrl }).then(html => {
         res.send(html);
     });
 });
