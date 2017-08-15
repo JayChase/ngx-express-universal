@@ -34,16 +34,48 @@ These steps are just a checklist for the [Angular cli story](https://github.com/
 ```typescript
 BrowserModule.withServerTransition({
       appId: 'cli-uni'
-    });
+    })
 ```
 
 * add server app to .angular-cli.json
+
+```json
+apps: [
+  ...,
+   {
+      "name": "uni",
+      "platform": "server",
+      "root": "src",
+      "outDir": "dist-server",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.server.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.server.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+]
+```
+
 * exclude dist-server in .gitignore 
 
-### add express server
+### add an express server
 
 * install express @types/node @types/express (--save)
-* add server-src/tscfonig.json
+* add server-src/tsconfig.json
 * add build-server script to package.json
 
 ```json
@@ -54,7 +86,7 @@ BrowserModule.withServerTransition({
 
 To get the Material styles working on the server side add the style bundle to the server index.html.
 
-* install glob and @types/blog (--save-dev)
+* install glob and @types/glob (--save-dev)
 * add build/addStyleBundle.js
 * add build-uni-add-css to package.json
 
