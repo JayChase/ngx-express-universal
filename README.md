@@ -75,8 +75,37 @@ apps: [
 ### add an express server
 
 * install express @types/node @types/express (--save)
-* add server-src/tsconfig.json
+* add server-src/tsconfig.json (standard node.js tsconfig with output path set to ../server)
 * add build-server script to package.json
+* add server-src/server.ts
+
+```typescript
+require('zone.js/dist/zone-node');
+const renderModuleFactory = require('@angular/platform-server').renderModuleFactory;
+const AppServerModuleNgFactory = require('../dist-server/main.d8532c2d5f13c00de031.bundle.js').AppServerModuleNgFactory; // bundle name set by npm script build-set-server-main-bundle
+// const index = require('fs').readFileSync('./dist-server/index.html', 'utf8'); // for server side rendering
+const index = require('fs').readFileSync('./dist/index.html', 'utf8'); // for server to client transition
+const express = require('express');
+const path = require('path');
+const app = express();
+const port = process.env.port || 3000;
+
+app.use(express.static(path.join(__dirname, '../dist'), {
+    index: false
+}));
+
+app.use('*', function (req, res, next) {
+    // res.sendFile(path.join(__dirname,'../dist/index.html'));
+    renderModuleFactory(
+        AppServerModuleNgFactory, { document: index, url: req.baseUrl }).then(html => {
+            res.send(html);
+        });
+});
+
+app.listen(port, function () {
+    console.log('listening on port: ' + port);
+});
+```
 
 ```json
 "build-server": "tsc -p ./server-src/tsconfig.json"
@@ -97,7 +126,11 @@ To get the Material styles working on the server side add the style bundle to th
 * add <!--css-bundle--> to src/index.html
 * change server/server.ts to use dist-server/index.html
 
-### update server.ts js bundle name on build
+```typescript
+const index = require('fs').readFileSync('./dist/index.html', 'utf8'); 
+```
+
+### update server.ts with main.*.js bundle name on build
 
 * add build/setServerMainBundle.js
 * add build-set-server-main-bundle
@@ -108,7 +141,7 @@ To get the Material styles working on the server side add the style bundle to th
 
 ### chosing between server side render or server to client transition
 
-For server side the index in server.ts should be:
+Just switch between the server or app index.html. So for server side the index in server.ts should be:
 
 ```typescript
 const index = require('fs').readFileSync('./dist-server/index.html', 'utf8');
