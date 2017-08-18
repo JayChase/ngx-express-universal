@@ -2,7 +2,7 @@
 
 Angular Cli (1.30) + Angular Material 2 + Angular Universal.
 
-This is a rough guide of how to get up and running with all of the above. The starting point is an Angular-cli generated app with Material 2 added. The aim of this repo is to be a guide to the minimum steps required to get everything up and running so production concerns like error handling, caching and performance etc... are not covered (but hopefully will be in a separate repo with all the best practices later).
+This is a rough guide of how to get up and running with all of the above. A blog post to accompany the code can be found [here](https://www.usefuldev.com/blog/post/angular-cli-with-material-2-and-universal). The starting point is an Angular-cli generated app with Material 2 added. The aim of this repo is to be a guide to the minimum steps required to get everything up and running so production concerns like error handling, caching and performance etc... are not covered (but hopefully will be in a separate repo with all the best practices later).
 
 ### quick links
 To get started with [Angular cli](https://github.com/angular/angular-cli),
