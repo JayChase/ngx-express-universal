@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run server",
     "build": "ng build",
     "build-server": "tsc -p ./server-src/tsconfig.json",
     "build-uni": "ng build --prod --app uni",
