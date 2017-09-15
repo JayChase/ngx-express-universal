@@ -1,6 +1,6 @@
 require('zone.js/dist/zone-node');
 const renderModuleFactory = require('@angular/platform-server').renderModuleFactory;
-const AppServerModuleNgFactory = require('../dist-server/main.0f820128f95c4d7066e8.bundle.js').AppServerModuleNgFactory; // bundle name set by npm script build-set-server-main-bundle
+const AppServerModuleNgFactory = require('../dist-server/main.82c6278ce04ca501e180.bundle.js').AppServerModuleNgFactory; // bundle name set by npm script build-set-server-main-bundle
 const path = require('path');
 // const index = require('fs').readFileSync(path.join(__dirname, '..', '/dist-server/index.html'), 'utf8'); // for server side rendering
 const index = require('fs').readFileSync(path.join(__dirname, '..', 'dist/index.html'), 'utf8'); // for server to client transition

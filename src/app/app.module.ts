@@ -1,7 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { MdSidenavModule, MdButtonModule, MdToolbarModule, MdIconModule, MdListModule } from '@angular/material';
 
@@ -19,7 +18,6 @@ import { AppComponent } from './app.component';
     BrowserModule.withServerTransition({
       appId: 'app-root'
     }),
-    BrowserAnimationsModule,
     MdSidenavModule,
     MdButtonModule,
     MdToolbarModule,
